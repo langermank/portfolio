@@ -1,0 +1,41 @@
+// vars
+$cssProp: #0073f0;
+$cssDefinition: #f400b5;
+$purple: #a400ff;
+$blue: #0083ff;
+$green: #00c100;
+$orange: #f97a00;
+$teal: #00b3c0;
+$red: #ea000d;
+$deeppurple: #5137ff;
+
+.pageWrap {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: grid;
+    grid-gap: 3rem 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+
+    section {
+        grid-column: 1 / -1;
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    .sec1 {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            border: solid 1px $purple;
+            padding: 2rem;
+            color: $purple;
+        }
+    }
+}
+
