@@ -8,6 +8,8 @@ $orange: #f97a00;
 $teal: #00b3c0;
 $red: #ea000d;
 $deeppurple: #5137ff;
+$gray: #515156;
+$lightgray: #a1a1ab;
 
 .pageWrap {
     max-width: 1280px;
@@ -37,5 +39,63 @@ $deeppurple: #5137ff;
             color: $purple;
         }
     }
+
+    .sec2 {
+        display: flex;
+        justify-content: space-between;
+
+        .skillz {
+            display: flex;
+        }
+
+        div {
+            border: solid 1px $purple;
+            padding: 2rem;
+            color: $purple;
+        }
+    }
+
+    .sec3 {
+        display: grid;
+        width: 50%;
+        grid-gap: 1rem;
+        grid-template:
+            "a a a a" auto
+            "b c c c" auto
+            "d c c c" auto
+            "e e e e" auto
+            / 1fr 1fr 1fr 1fr;
+
+        div:nth-of-type(1) {
+            grid-area: a;
+        }
+
+        div:nth-of-type(2) {
+            grid-area: b;
+        }
+
+        div:nth-of-type(3) {
+            grid-area: c;
+            background: $cssDefinition
+        }
+
+        div:nth-of-type(4) {
+            grid-area: d;
+        }
+
+        div:nth-of-type(5) {
+            grid-area: e;
+        }
+    }
+}
+
+.solidBox {
+    background: $lightgray;
+    padding: 3rem;
+}
+
+.dottedBox {
+    border: dotted 1px $gray;
+    padding: 3rem;
 }
 
