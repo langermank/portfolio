@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styles from "../styles/devcanvas.module.scss"
 import SEO from "../components/seo"
+import JobTitle from "../components/jobtitle"
 
 const SecondPage = () => (
   <div className={styles.pageWrap}>
@@ -35,6 +36,9 @@ const SecondPage = () => (
 				<div className={styles.solidBox}></div>
 				<div className={styles.solidBox}></div>
 			</div>
+		</section>
+		<section>
+			<JobTitle />
 		</section>
 		<section>
     		<Link to="/">Go back to the homepage</Link>
