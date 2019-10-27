@@ -1,101 +1,92 @@
-// vars
-$cssProp: #0073f0;
-$cssDefinition: #f400b5;
-$purple: #a400ff;
-$blue: #0083ff;
-$green: #00c100;
-$orange: #f97a00;
-$teal: #00b3c0;
-$red: #ea000d;
-$deeppurple: #5137ff;
-$gray: #515156;
-$lightgray: #a1a1ab;
+@import 'variables';
 
 .pageWrap {
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 3rem 1rem;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: grid;
+  grid-gap: 3rem 1rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+
+  section {
+    grid-column: 1 / -1;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .sec1 {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      border: solid 1px $purple;
+      padding: 2rem;
+      color: $purple;
+    }
+  }
+
+  .sec2 {
+    display: flex;
+    justify-content: space-between;
+
+    .skillz {
+      display: flex;
+    }
+
+    div {
+      border: solid 1px $purple;
+      padding: 2rem;
+      color: $purple;
+    }
+  }
+
+  .sec3 {
     display: grid;
-    grid-gap: 3rem 1rem;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
+    width: 50%;
+    grid-template:
+      "a a a a" auto
+      "b c c c" auto
+      "d c c c" auto
+      "e e e e" auto
+      / 1fr 1fr 1fr 1fr;
 
-    section {
-        grid-column: 1 / -1;
-
-        h2 {
-            margin-bottom: 0;
-        }
+    &.mynewclass {
+      grid-gap: 1rem;
     }
 
-    .sec1 {
-        display: flex;
-        justify-content: space-between;
-
-        div {
-            border: solid 1px $purple;
-            padding: 2rem;
-            color: $purple;
-        }
+    div:nth-of-type(1) {
+      grid-area: a;
     }
 
-    .sec2 {
-        display: flex;
-        justify-content: space-between;
-
-        .skillz {
-            display: flex;
-        }
-
-        div {
-            border: solid 1px $purple;
-            padding: 2rem;
-            color: $purple;
-        }
+    div:nth-of-type(2) {
+      grid-area: b;
     }
 
-    .sec3 {
-        display: grid;
-        width: 50%;
-        grid-gap: 1rem;
-        grid-template:
-            "a a a a" auto
-            "b c c c" auto
-            "d c c c" auto
-            "e e e e" auto
-            / 1fr 1fr 1fr 1fr;
-
-        div:nth-of-type(1) {
-            grid-area: a;
-        }
-
-        div:nth-of-type(2) {
-            grid-area: b;
-        }
-
-        div:nth-of-type(3) {
-            grid-area: c;
-            background: $cssDefinition
-        }
-
-        div:nth-of-type(4) {
-            grid-area: d;
-        }
-
-        div:nth-of-type(5) {
-            grid-area: e;
-        }
+    div:nth-of-type(3) {
+      grid-area: c;
+      background: $cssDefinition;
     }
+
+    div:nth-of-type(4) {
+      grid-area: d;
+    }
+
+    div:nth-of-type(5) {
+      grid-area: e;
+    }
+  }
 }
 
 .solidBox {
-    background: $lightgray;
-    padding: 3rem;
+  background: $lightgray;
+  padding: 3rem;
 }
 
 .dottedBox {
-    border: dotted 1px $gray;
-    padding: 3rem;
+  border: dotted 1px $gray;
+  padding: 3rem;
 }
-

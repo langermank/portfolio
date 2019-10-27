@@ -1,0 +1,49 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.btn {
+  background-color: $basered;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  color: $white;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  @include px-rem(font-size, 16);
+  padding: 15px 20px;
+
+  &:hover {
+    background-color: darken($basered, 15%);
+  }
+
+  &:focus {
+    @include a11yOutline;
+  }
+
+  &.withIcon {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
+    // place text inside span next to svg icon
+    span {
+      flex: 1 1 100%;
+    }
+  }
+
+  &:disabled {
+    background-color: gainsboro;
+    border-color: transparent;
+    color: $almostblack;
+    cursor: default;
+  }
+
+  &.funStyles {
+	background-color: $purple;
+
+	&:hover {
+		background-color: darken($purple, 15%);
+	  }
+  }
+}

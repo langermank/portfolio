@@ -1,0 +1,74 @@
+$base: 16;
+$baseLineHeight: 1.5;
+$smallerLineHeight: 1.2;
+$transition: all 0.2s ease-in-out;
+$border-radius: 2px;
+
+// media queries
+// $min-xlg-desktop: ~"only screen and (min-width: 1440px)";
+// $min-lg-desktop: ~"only screen and (min-width: 1280px)";
+// $min-desktop: ~"only screen and (min-width: 1024px)";
+// $min-tablet: ~"only screen and (min-width: 768px)";
+// $max-mobile: ~"only screen and (max-width: 767px)";
+
+// breakpoints
+$xlg-desktop: 1440px;
+$lg-desktop: 1280px;
+$desktop: 1024px;
+$tablet: 768px;
+$mobile: 320px;
+
+$small-screen: $mobile;
+$large-screen: $xlg-desktop;
+
+// fonts
+$primary-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+$primary-font-bold: 700;
+$primary-font-normal: 400;
+$generic-font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+
+// base colors
+$basered: #ff6347;
+// text
+$black: #000000;
+$body: darken($black, 17%);
+$almostblack: #453d3b;
+// gray
+$white: #ffffff;
+
+// variations
+$lighten-percentage: 10%;
+$darken-percentage: 10%;
+
+// specifics
+$link: #4079e6;
+$link-hover: darken($link, $darken-percentage);
+
+// fun things
+$cssProp: #0073f0;
+$cssDefinition: #f400b5;
+$purple: #a400ff;
+$blue: #0083ff;
+$green: #00c100;
+$orange: #f97a00;
+$teal: #00b3c0;
+$red: #ea000d;
+$deeppurple: #5137ff;
+$gray: #515156;
+$lightgray: #a1a1ab;
+
+// spacing ems
+$space-unit: 1em;
+$space-xs: (0.5 * $space-unit);
+$space-sm: (0.75 * $space-unit);
+$space-md: (1.25 * $space-unit);
+$space-lg: (2 * $space-unit);
+$space-xl: (3.25 * $space-unit);
+
+// spacing rems
+$space-unit-rem: 1rem;
+$space-xs-rem: (0.5 * $space-unit-rem);
+$space-sm-rem: (0.75 * $space-unit-rem);
+$space-md-rem: (1.25 * $space-unit-rem);
+$space-lg-rem: (2 * $space-unit-rem);
+$space-xl-rem: (3.25 * $space-unit-rem);

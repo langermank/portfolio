@@ -1,0 +1,82 @@
+@import 'variables';
+
+// for-placement-only to use for building page frameworks
+// copy into your source less file and use the class on whatever element you're laying out
+@mixin fpo {
+  background-color: $basered;
+  text-align: center;
+  @include px-rem(padding, 15);
+  @include px-rem-margin(15, 0, 15, 0);
+}
+
+// a11y outline mixin
+@mixin a11yOutline {
+  outline: solid 2px $link;
+  outline-offset: -2px;
+}
+
+// this visually hides a label/text for a11y
+@mixin screenReaderLabel {
+  font-size: 0;
+  height: 1px;
+  overflow: hidden;
+  display: block;
+}
+
+// based on the font-size of the root HTML element
+@mixin px-rem($property, $sizeValue) {
+  $pxValue: $sizeValue;
+  $remValue: ($sizeValue / $base);
+  #{property}: "${remValue}rem";
+}
+
+// based on the font-size of the parent element
+@mixin px-em($property, $sizeValue) {
+  $pxValue: $sizeValue;
+  $emValue: ($sizeValue / $base);
+  #{property}: "${emValue}em";
+}
+
+// sets margins in rems
+// mtv = margin top value
+// usage @include px-rem-margin(10, 20, 10, 30);
+@mixin px-rem-margin($mt: 0, $mr: 0, $mb: 0, $ml: 0) {
+  $mtv: ($mt / $base);
+  $mrv: ($mr / $base);
+  $mbv: ($mb / $base);
+  $mlv: ($ml / $base);
+  #{margin}: #{"${mtv}rem" "${mrv}rem" "${mbv}rem" "${mlv}rem"};
+}
+
+// sets margins in ems
+// mtv = margin top value
+// usage @include px-em-margin(10, 20, 10, 30);
+@mixin px-em-margin($mt: 0, $mr: 0, $mb: 0, $ml: 0) {
+  $mtv: ($mt / $base);
+  $mrv: ($mr / $base);
+  $mbv: ($mb / $base);
+  $mlv: ($ml / $base);
+  #{margin}: #{"${mtv}em" "${mrv}em" "${mbv}em" "${mlv}em"};
+}
+
+// sets padding in ems
+// ptv = padding top value
+// usage @include px-em-padding(10, 20, 10, 30);
+@mixin px-em-padding($pt: 0, $pr: 0, $pb: 0, $pl: 0) {
+  $ptv: ($pt / $base);
+  $prv: ($pr / $base);
+  $pbv: ($pb / $base);
+  $plv: ($pl / $base);
+  #{padding}: #{"${ptv}em" "${prv}em" "${pbv}em" "${plv}em"};
+}
+
+// sets padding in rems
+// ptv = padding top value
+// usage @include px-rem-padding(10, 20, 10, 30);
+@mixin px-rem-padding($pt: 0, $pr: 0, $pb: 0, $pl: 0) {
+  $ptv: ($pt / $base);
+  $prv: ($pr / $base);
+  $pbv: ($pb / $base);
+  $plv: ($pl / $base);
+  #{padding}: #{"${ptv}rem" "${prv}rem" "${pbv}rem" "${plv}rem"};
+}
