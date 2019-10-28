@@ -56,6 +56,7 @@ $red: #ea000d;
 $deeppurple: #5137ff;
 $gray: #515156;
 $lightgray: #a1a1ab;
+$lightergray: lighten($lightgray, 20%);
 
 // spacing ems
 $space-unit: 1em;

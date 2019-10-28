@@ -55,22 +55,43 @@ class SecondPage extends React.Component {
           </div>
         </section>
         <section>
-          <h3>I need some room to breathe!</h3>
-          <Button funStyles onClick={this.handleClick.bind(this)}>Click me</Button>
-          <div
-            className={classnames(
-              styles.sec3,
-              this.state.active ? styles.mynewclass : ""
-            )}
-          >
-            <div className={styles.solidBox}></div>
-            <div className={styles.solidBox}></div>
-            <div className={styles.solidBox}></div>
-            <div className={styles.solidBox}></div>
-            <div className={styles.solidBox}></div>
-          </div>
+			<div className={styles.inline}>
+          		<h3>Toggle some grid-gap</h3>
+          		<Button funStyles onClick={this.handleClick.bind(this)}>Click me</Button>
+			</div>
+			<div
+			className={classnames(
+				styles.sec3,
+				this.state.active ? styles.mynewclass : ""
+			)}
+			>
+				<div className={styles.solidBox}></div>
+				<div className={styles.solidBox}></div>
+				<div className={styles.solidBox}></div>
+				<div className={styles.solidBox}></div>
+				<div className={styles.solidBox}></div>
+			</div>
         </section>
-        <section>{/* <JobTitle /> */}</section>
+        <section>
+			<div className={styles.sec4}>
+				<div className={styles.design}>
+					Design
+				</div>
+				<div className={styles.dev}>
+					Development
+				</div>
+			</div>
+		</section>
+		<section>
+			<div className={styles.myNewHybridRole}>
+				<div className={styles.design}>
+					Org one
+				</div>
+				<div className={styles.dev}>
+					Org two
+				</div>
+			</div>
+		</section>
         <section>
           <Link to="/">Go back to the homepage</Link>
         </section>

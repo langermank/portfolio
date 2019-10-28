@@ -46,47 +46,90 @@
 
   .sec3 {
     display: grid;
-    width: 50%;
     grid-template:
-      "a a a a" auto
-      "b c c c" auto
-      "d c c c" auto
-      "e e e e" auto
-      / 1fr 1fr 1fr 1fr;
+      "header header" auto
+      "sidebar main" auto
+      "sidebar main" auto
+      "sidebar footer" auto
+      / 1fr 1fr;
 
     &.mynewclass {
       grid-gap: 1rem;
     }
 
+    button {
+        margin: 0 0 1.53rem 1.53rem;
+    }
+
     div:nth-of-type(1) {
-      grid-area: a;
+      grid-area: header;
     }
 
     div:nth-of-type(2) {
-      grid-area: b;
+      grid-area: sidebar;
     }
 
     div:nth-of-type(3) {
-      grid-area: c;
-      background: $cssDefinition;
+      grid-area: main;
+      background: $teal;
     }
 
     div:nth-of-type(4) {
-      grid-area: d;
+      grid-area: sidebar;
     }
 
     div:nth-of-type(5) {
-      grid-area: e;
+      grid-area: footer;
     }
   }
+
+  .sec4 {
+      display: grid;
+      grid-template:
+        "design development" 500px
+        / 1fr 1fr;
+
+    .design {
+        background: $orange;
+        grid-area: design;
+    }
+
+    .dev {
+        background: $teal;
+        grid-area: development;
+    }
+  }
+
+    .myNewHybridRole {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            background: $lightergray;
+            padding: 3rem;
+        }
+    }
 }
 
 .solidBox {
-  background: $lightgray;
+  background: $lightergray;
   padding: 3rem;
 }
 
 .dottedBox {
   border: dotted 1px $gray;
   padding: 3rem;
+}
+
+.circle {
+    height: 10em;
+    width: 10em;
+    background-color:#bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.inline {
+    display: flex;
+    align-items: center;
 }
