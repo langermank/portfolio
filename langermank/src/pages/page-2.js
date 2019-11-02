@@ -3,8 +3,7 @@ import { Link } from "gatsby"
 import styles from "../styles/devcanvas.module.scss"
 import classnames from "clsx"
 import SEO from "../components/seo"
-import JobTitle from "../components/jobtitle"
-import Button from "../components/button"
+import Button from "../components/Button.js"
 
 class SecondPage extends React.Component {
   constructor(props) {
