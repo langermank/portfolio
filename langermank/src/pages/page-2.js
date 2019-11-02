@@ -92,6 +92,15 @@ class SecondPage extends React.Component {
 				</div>
 			</div>
 		</section>
+    <section>
+			<div className={styles.sec5}>
+				<div className={styles.design}><h2>Design/UX</h2></div>
+				<div className={styles.development}><h2>Development</h2></div>
+        <div className={styles.content}><h2>Content</h2></div>
+        <div className={styles.brand}><h2>Brand</h2></div>
+        <div className={styles.team}><h2>Design System Team</h2></div>
+			</div>
+		</section>
         <section>
           <Link to="/">Go back to the homepage</Link>
         </section>
