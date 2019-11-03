@@ -7,7 +7,7 @@ import styles from "../styles/home.module.scss"
 const IndexPage = props => (
   <div className={styles.pageWrap}>
   <header>
-    <h1>Katie Langerman</h1>
+    <h1>katie langerman</h1>
     <span className={styles.navLinksWrap}>
       <a href="mailto:langermank@gmail.com" alt="email katie">langermank@gmail.com</a>
       <span className={styles.navLinks}>
