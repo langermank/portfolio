@@ -1,22 +1,26 @@
-import React from "react"
-import { Link } from "gatsby"
-import styles from "../styles/devcanvas.module.scss"
-import classnames from "clsx"
-import SEO from "../components/seo"
-import Button from "../components/Button.js"
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import { Link } from 'gatsby';
+import classnames from 'clsx';
+import styles from '../styles/devcanvas.module.scss';
+import SEO from '../components/seo';
+import Button from '../components/Button';
 
 class SecondPage extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-    }
+    super(props);
+    // this.state = {
+    //   active: false,
+    // };
+    this.state = { isToggleOn: true };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState({
-      active: !this.state.active,
-    })
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
+    }));
   }
 
   render() {
@@ -54,58 +58,43 @@ class SecondPage extends React.Component {
           </div>
         </section>
         <section>
-			<div className={styles.inline}>
-          		<h3>Toggle some grid-gap</h3>
-          		<Button funStyles onClick={this.handleClick.bind(this)}>Click me</Button>
-			</div>
-			<div
-			className={classnames(
-				styles.sec3,
-				this.state.active ? styles.mynewclass : ""
-			)}
-			>
-				<div className={styles.solidBox}></div>
-				<div className={styles.solidBox}></div>
-				<div className={styles.solidBox}></div>
-				<div className={styles.solidBox}></div>
-				<div className={styles.solidBox}></div>
-			</div>
+          <div className={styles.inline}>
+            <h3>Toggle some grid-gap</h3>
+            <Button funStyles onClick={this.handleClick}>Click me</Button>
+          </div>
+          <div className={classnames(styles.sec3, this.state.isToggleOn ? styles.mynewclass : '')}>
+            <div className={styles.solidBox} />
+            <div className={styles.solidBox} />
+            <div className={styles.solidBox} />
+            <div className={styles.solidBox} />
+            <div className={styles.solidBox} />
+          </div>
         </section>
         <section>
-			<div className={styles.sec4}>
-				<div className={styles.design}>
-					Design
-				</div>
-				<div className={styles.dev}>
-					Development
-				</div>
-			</div>
-		</section>
-		<section>
-			<div className={styles.myNewHybridRole}>
-				<div className={styles.design}>
-					Org one
-				</div>
-				<div className={styles.dev}>
-					Org two
-				</div>
-			</div>
-		</section>
-    <section>
-			<div className={styles.sec5}>
-				<div className={styles.design}><h2>Design/UX</h2></div>
-				<div className={styles.development}><h2>Development</h2></div>
-        <div className={styles.content}><h2>Content</h2></div>
-        <div className={styles.brand}><h2>Brand</h2></div>
-        <div className={styles.team}><h2>Design System Team</h2></div>
-			</div>
-		</section>
+          <div className={styles.myNewHybridRole}>
+            <div className={styles.design}>
+            Org one
+            </div>
+            <div className={styles.dev}>
+            Org two
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className={styles.sec5}>
+            <div className={styles.design}><h2>Design/UX</h2></div>
+            <div className={styles.development}><h2>Development</h2></div>
+            <div className={styles.content}><h2>Content</h2></div>
+            <div className={styles.brand}><h2>Brand</h2></div>
+            <div className={styles.team}><h2>Design System Team</h2></div>
+          </div>
+        </section>
         <section>
           <Link to="/">Go back to the homepage</Link>
         </section>
       </div>
-    )
+    );
   }
 }
 
-export default SecondPage
+export default SecondPage;

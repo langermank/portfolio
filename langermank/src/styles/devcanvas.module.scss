@@ -191,6 +191,10 @@
 }
 
 .inline {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 0;
+  }
 }
