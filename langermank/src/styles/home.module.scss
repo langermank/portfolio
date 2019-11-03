@@ -1,0 +1,54 @@
+@import "variables";
+
+header {
+	display: flex;
+	align-items: center;
+	margin: 16px;
+
+	.navLinksWrap {
+		margin-left: auto;
+		display: flex;
+		flex-direction: column;
+
+		.navLinks {
+			color: pink;
+			a {
+				margin: 16px 16px 16px 0;
+			}
+		}
+	}
+}
+
+main {
+  display: grid;
+  grid-template:
+    ". welcome ." auto
+    ". moredetails ." auto
+    ". footer ." auto
+    / 1fr 3fr 1fr;
+}
+
+.aboutKatie {
+  grid-area: welcome;
+  display: grid;
+  grid-gap: 16px;
+  grid-template:
+    "katie designer-who-codes" auto
+    / 1fr 2fr;
+
+  img {
+    grid-area: katie;
+  }
+
+  p {
+    grid-area: designer-who-codes;
+  }
+}
+
+.moreThings {
+  grid-area: moredetails;
+}
+
+footer {
+  grid-area: footer;
+}

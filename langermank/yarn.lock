@@ -5265,7 +5265,7 @@ gatsby-graphiql-explorer@^0.2.26:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
-gatsby-image@^2.2.29:
+gatsby-image@^2.2.30:
   version "2.2.30"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.30.tgz#3ca58adb1814a759dcaf26d742ae90e89c7144de"
   integrity sha512-WANouedEFeqLsaDwZbTHlYKTPqV0Htr2A1BiP921SVaR3GrMwtuBoBzpDSXHF+0q9TE2w885gKdNIG/GgzgKaQ==
@@ -5409,6 +5409,14 @@ gatsby-source-filesystem@^2.1.33:
     read-chunk "^3.2.0"
     valid-url "^1.0.9"
     xstate "^4.6.7"
+
+gatsby-source-medium@^2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/gatsby-source-medium/-/gatsby-source-medium-2.1.12.tgz#cbcde73e937f181d609d0c6bc95c653344029817"
+  integrity sha512-P6IB9MF/sVa47UL6vocdl2W2Gbh9Y04XlD6oCghd+yTBCJKA8orKlANfVpb1Eqhp1kbkyOpgjHaZd6rNP4VIUQ==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    axios "^0.19.0"
 
 gatsby-telemetry@^1.1.35:
   version "1.1.35"
