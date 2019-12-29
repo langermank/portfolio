@@ -35,6 +35,7 @@ module.exports = {
         path: `${__dirname}/src/text`,
       },
     },
+    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',

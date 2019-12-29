@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query IndexPage {
-    allMdx {
+    allMdx(filter: {fileAbsolutePath: {regex: "/posts/"}}) {
       edges {
         node {
           id
