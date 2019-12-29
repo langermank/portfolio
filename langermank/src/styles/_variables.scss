@@ -22,10 +22,22 @@ $small-screen: $mobile;
 $large-screen: $xlg-desktop;
 
 // fonts
-$primary-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-$primary-font-bold: 700;
-$primary-font-normal: 400;
+$cabin: "Cabin Variable", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
+$source-sans: "Source Sans Variable", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
+$body-regular: "wght" 400;
+$body-bold: "wght" 700;
+$cabin-regular: "wght" 94, "wdth" 100;
+$cabin-medium: "wght" 109, "wdth" 100;
+$cabin-semibold: "wght" 116, "wdth" 100;
+$cabin-bold: "wght" 128, "wdth" 100;
+$heading-font: $cabin;
+$heading-font-weight-bold: 700;
+$base-font: $source-sans;
+$base-font-weight-bold: 700;
+$base-font-weight-normal: 400;
 $generic-font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+
+
 
 // base colors
 $basered: #ff6347;

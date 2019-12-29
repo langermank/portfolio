@@ -1,75 +1,140 @@
 @import "variables";
-@import "contact.module.scss";
+@import "mixins";
+// @import "contact.module.scss";
 
-a {
-	color: $link;
-	text-decoration: none;
-
-	&:hover {
-		color: $link-hover;
-		cursor: pointer;
-		transition: $transition;
-	}
-
-	&:visited {
-		color: $link;
-	}
-}
-
-header {
-	display: flex;
-	flex-wrap: wrap;
-	grid-area: header;
-	align-items: center;
-	margin: 16px 32px;
-
-	.navLinksWrap {
-		display: flex;
-		flex-direction: column;
-		font-size: 16px;
-
-		.navLinks {
-			a {
-				margin: 16px 16px 16px 0;
-			}
-		}
-	}
-}
 
 main {
-	grid-area: welcome;
-}
-
-.pageWrap {
-  display: grid;
-  grid-gap: 62px 0;
-  grid-template:
-  	"header header header" auto
-    ". welcome ." auto
-    ". moredetails ." auto
-    "footer footer footer" auto
-	/ .125fr 3fr .125fr;
+	grid-area: main;
+	display: grid;
+	grid-gap: 60px;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
 }
 
 .aboutKatie {
-  display: grid;
-  grid-gap: 24px;
-  grid-template:
-	"katie" auto
-	"designer-who-codes" auto
-    / 1fr;
+	grid-column: 1/-1;
+	// border-top: solid 1px $black;
+	display: grid;
+	grid-gap: 30px;
+	grid-template:
+		"katie" auto
+		"image" auto
+		"designer-who-codes" auto
+		/ auto;
 
-  img {
-    grid-area: katie;
-  }
+	div:nth-child(2){
+		grid-area: image;
+	}
 
-  p {
-    grid-area: designer-who-codes;
-  }
+	.katieHeadline {
+		padding-top: 30px;
+		// background: $black;
+		grid-area: katie;
+
+
+		h1 {
+			// color: $white;
+		}
+
+		.neatImage {
+			transition: all .25s ease-in-out;
+			background-image: url(../images/katie-langerman.jpg);
+			background-position: center;
+			background-size: cover;
+			position: relative;
+
+			&:after {
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				// z-index: 999;
+				background-color: $black;
+				opacity: 1;
+				top: 0;
+				left: 0;
+				transition: all .25s ease-in-out;
+			}
+
+			&:hover {
+				&:after {
+					opacity: 0;
+					transition: opacity .25s ease-in-out;
+				}
+			}
+		}
+
+
+	}
+
+	h2 {
+		grid-area: designer-who-codes;
+	}
 }
 
-.moreThings {
-  grid-area: moredetails;
+.postsWrap {
+	grid-column: 1/-1;
+
+	h1 {
+		margin-bottom: 30px;
+	}
+
+	.posts {
+		display: grid;
+		grid-gap: 20px;
+		grid-template:
+			"heading1 heading2" auto
+			"list1 list2" auto
+			/ 1fr 1fr;
+
+		h2 {
+			&:first-of-type {
+				grid-area: heading1;
+			}
+
+			&:last-of-type {
+				grid-area: heading2;
+			}
+		}
+
+		ul {
+			@include fontSize(18px);
+			line-height: $baseLineHeight;
+
+			&:first-of-type {
+				grid-area: list1;
+			}
+
+			&:last-of-type {
+				grid-area: list2;
+			}
+		}
+
+		li {
+			margin-bottom: 30px;
+		}
+
+		a {
+			display: flex;
+			flex-direction: column;
+
+			time {
+				color: gray;
+				@include fontSize(16px);
+			}
+		}
+
+		.customDate {
+			color: gray;
+			@include fontSize(16px);
+			display: flex;
+			flex-direction: row;
+
+			.bullet {
+				padding: 0 4px;
+			}
+		}
+	}
 }
 
 footer {
@@ -79,33 +144,12 @@ footer {
 }
 
 @media only screen and (min-width: $tablet) {
-	.pageWrap {
-		grid-template:
-			"header header header" auto
-			". welcome ." auto
-			". moredetails ." auto
-			"footer footer footer" auto
-			/ .5fr 3fr .5fr;
-	}
 
 	.aboutKatie {
 		grid-template:
-		  "katie designer-who-codes" auto
-		  / 1fr 2fr;
-	}
-
-	.navLinksWrap {
-		margin-left: auto;
+		  "katie katie" auto
+		  "image designer-who-codes" auto
+		  / min-content;
 	}
 }
 
-@media only screen and (min-width: $lg-desktop) {
-	.pageWrap {
-		grid-template:
-			"header header header" auto
-		  ". welcome ." auto
-		  ". moredetails ." auto
-		  "footer footer footer" auto
-		  / 1fr 3fr 1fr;
-	}
-}

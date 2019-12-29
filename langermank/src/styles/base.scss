@@ -1,0 +1,113 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+
+body {
+    font-family: $base-font;
+    font-variation-settings: $body-regular;
+    font-feature-settings: "salt";
+    font-size: 100%;
+}
+
+h1,
+.header1 {
+    font-family: $heading-font;
+    font-variation-settings: $cabin-bold;
+    color: black;
+    line-height: $smallerLineHeight;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include fontSize(40px);
+    letter-spacing: .04em;
+}
+
+h2,
+.header2 {
+    font-family: $base-font;
+    color: $black;
+    line-height: $baseLineHeight;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include fontSize(24px);
+    // letter-spacing: .04em;
+}
+
+h3,
+.header3 {
+    color: $black;
+    line-height: $smallerLineHeight;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include fontSize(22px);
+}
+
+h4,
+.header4 {
+    color: $black;
+    line-height: $smallerLineHeight;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include fontSize(20px);
+}
+
+h5,
+.header5 {
+    color: $black;
+    line-height: $baseLineHeight;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include fontSize(16px);
+}
+
+h6,
+.header6 {
+    color: black;
+    line-height: $baseLineHeight;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include px-rem(font-size, 16)
+}
+
+p {
+    color: $body;
+    line-height: $baseLineHeight;
+    margin-bottom: 0;
+    margin-top: 0;
+    @include fontSize(18px);
+
+    &.bodySM {
+        @include fontSize(14px);
+    }
+
+    &.bodyLight {
+        color: black;
+    }
+}
+
+a {
+    color: $link;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $link-hover;
+        text-decoration: none;
+        transition: $transition;
+    }
+}
+
+.bold,
+strong {
+    font-weight: $base-font-weight-bold;
+}
+
+// sets ideal reading line length
+.bodyOfText {
+    @include px-em(width, 640);
+    margin: 0 auto;
+}
+
+.textCenter {
+    text-align: center;
+}

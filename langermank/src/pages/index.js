@@ -5,66 +5,90 @@ import { Link } from 'gatsby';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import styles from '../styles/home.module.scss';
+import Layout from '../components/layout';
+import Text from '../text/aboutme.mdx';
 
-const aboutme = 'Katie is a Senior UI/UX Engineer at <a href="https://careers.cargurus.com/">CarGurus</a> and a co-organizer of <a href="https://www.meetup.com/Ladies-That-UX-Boston/" alt="Ladies that UX Boston Meetup Group" target="_blank" rel="noopener noreferrer">Ladies that UX Boston</a>, a meetup group empowering women who work in design and technology. With a background in Graphic Design, she both designs and develops products that are performant and user friendly. She’s passionate about connecting engineering to design through the magic of CSS. Currently, shes nerding out over design systems and reusable components.';
-
-const IndexPage = () => (
-  // eslint-disable-next-line react/jsx-filename-extension
-  <div className={styles.pageWrap}>
-    <header>
-      <h1>katie langerman</h1>
-      <span className={styles.navLinksWrap}>
-        <a href="mailto:langermank@gmail.com" alt="email katie">
-          langermank@gmail.com
-        </a>
-        <span className={styles.navLinks}>
-          <a
-            href="https://www.linkedin.com/in/langermank/"
-            alt="linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin
-          </a>
-          <a
-            href="https://twitter.com/KatieLangerman"
-            alt="twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            twitter
-          </a>
-          <a href="https://github.com/langermank" alt="github" target="_blank" rel="noopener noreferrer">
-            github
-          </a>
-          <a
-            href="https://dribbble.com/katielangerman"
-            target="_blank"
-            rel="noopener noreferrer"
-            alt="dribbble"
-          >
-            dribbble
-          </a>
-        </span>
-      </span>
-    </header>
-    <main>
+const IndexPage = ({ data }) => {
+  const { edges: posts } = data.allMdx
+  return (
+    <Layout>
       <SEO title="Home" />
-      <div className={styles.aboutKatie}>
+      <section className={styles.aboutKatie}>
+        <div className={styles.katieHeadline}>
+          <h1>I'm Katie, designer & developer</h1>
+        </div>
         <Image />
-        <p dangerouslySetInnerHTML={{
-          __html: aboutme,
-        }}
-        />
-      </div>
-      <div className={styles.moreThings} />
-    </main>
-    <footer>
-      <Link to="page-2" alt="my scrap paper">
-        Playground
-      </Link>
-    </footer>
-  </div>
-);
+        <Text/>
+      </section>
+      <section className={styles.postsWrap}>
+        <h1>Tidbits</h1>
+        <div className={styles.posts}>
+          <h2>Here</h2>
+          <ul className={styles.internal}>
+            {posts.map(({ node: post }) => (
+              <li key={post.id}>
+                <Link to={post.fields.slug}>
+                  {post.frontmatter.title}
+                  <time>{post.frontmatter.date}</time>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h2>Somewhere Else</h2>
+          <ul className={styles.external}>
+            <li>
+              <a
+                href="https://xd.adobe.com/ideas/perspectives/interviews/critical-role-ux-generalist-hybrid-designer/"
+                alt="adobe blog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hybrid Designer Career Path
+                <span className={styles.customDate}>
+                  Adobe<span aria-hidden="true" className={styles.bullet}> · </span>
+                  <time>January 10, 2019</time>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://medium.com/ltuxbos/wcw-february-with-katie-langerman-2df2c282e9ea"
+                alt="ladies that ux boston wcw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LTUX Boston #WCW
+                <span className={styles.customDate}>
+                Ladies that UX Boston<span aria-hidden="true" className={styles.bullet}> · </span>
+                  <time>February 14, 2018</time>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </Layout>
+  )
+};
+
+export const pageQuery = graphql`
+  query IndexPage {
+    allMdx {
+      edges {
+        node {
+          id
+          excerpt
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage;
