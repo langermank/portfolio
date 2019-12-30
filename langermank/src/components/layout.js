@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <footer>
         <Link to="page-2" alt="my scrap paper">
-          Playground
+          Scrap paper
         </Link>
       </footer>
     </div>

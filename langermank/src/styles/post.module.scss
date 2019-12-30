@@ -1,0 +1,19 @@
+@import "variables";
+@import "mixins";
+
+.postWrap {
+  display: grid;
+  grid-template-columns: [main-start] auto [main-end];
+  grid-gap: 30px;
+}
+
+.postContent, .postHeader {
+  grid-column: main/main;
+}
+
+@media only screen and (min-width: $desktop) {
+	.postWrap {
+        display: grid;
+        grid-template-columns: [main-start] 4fr [main-end] 1.5fr;
+      }
+}
