@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Link } from 'gatsby';
+import classnames from 'clsx';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import styles from '../styles/home.module.scss';
@@ -17,14 +18,18 @@ const IndexPage = ({ data }) => {
         <div className={styles.katieHeadline}>
           <h1>I'm Katie, designer & developer</h1>
         </div>
-        <Image />
         <Text/>
+        <Image/>
       </section>
       <section className={styles.postsWrap}>
         <h2 className="header1">Tidbits</h2>
-        <div className={styles.posts}>
-          <h2>Here</h2>
-          <ul className={styles.internal}>
+        <div className={styles.outerGrid}>
+          <span></span>
+          <div className={styles.blogPosts}>
+            <span className={styles.headerWrap}>
+              <h3>here</h3>
+            </span>
+            <ul className={styles.internal}>
             {posts.map(({ node: post }) => (
               <li key={post.id}>
                 <Link to={post.fields.slug}>
@@ -34,8 +39,15 @@ const IndexPage = ({ data }) => {
               </li>
             ))}
           </ul>
-          <h2>Somewhere Else</h2>
-          <ul className={styles.external}>
+          </div>
+        </div>
+        <div className={styles.outerGrid}>
+          <span></span>
+          <div className={classnames(styles.blogPosts, styles.externalPosts)}>
+            <span className={styles.headerWrap}>
+              <h3>&there</h3>
+            </span>
+            <ul className={styles.external}>
             <li>
               <a
                 href="https://xd.adobe.com/ideas/perspectives/interviews/critical-role-ux-generalist-hybrid-designer/"
@@ -65,6 +77,7 @@ const IndexPage = ({ data }) => {
               </a>
             </li>
           </ul>
+          </div>
         </div>
       </section>
     </Layout>

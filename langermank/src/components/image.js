@@ -17,17 +17,17 @@ import Img from 'gatsby-image';
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "katie-langerman.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "katie-langerman-headshot.jpg" }) {
         childImageSharp {
-          fixed(width: 300) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 250) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `);
 
-  return <Img fixed={data.placeholderImage.childImageSharp.fixed} />;
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} style={{ borderRadius: "50%" }} alt="Katie Langerman's Face" />;
 };
 
 export default Image;

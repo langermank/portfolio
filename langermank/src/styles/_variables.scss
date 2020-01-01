@@ -15,6 +15,7 @@ $large-screen: $xlg-desktop;
 
 // fonts
 $cabin: "Cabin Variable", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
+$cabin-italic: "Cabin Variable Italic", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
 $source-sans: "Source Sans Variable", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
 $source-sans-italic: "Source Sans Variable Italic", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;$generic-font-family: Menlo, Monaco, Consolas, Courier New, monospace;
 // variable font settings
@@ -33,7 +34,8 @@ $base-font-weight-normal: $source-sans-normal;
 
 
 // base colors
-$hintofpink: #FDF7F7;
+$hintofpink: #fdf7f7;
+$deeperpink: #e69999;
 $redpop: #ff6347;
 // text
 $black: #000000;
