@@ -7,7 +7,7 @@ import styles from "../styles/post.module.scss"
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <Link to="/">Back home</Link>
+      <Link to="/" className={styles.backLink}>Back home</Link>
       <article className={styles.postWrap}>
 	  	<div className={styles.postHeader}>
 		  <h1>{mdx.frontmatter.title}</h1>

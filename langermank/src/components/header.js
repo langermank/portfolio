@@ -6,7 +6,6 @@ import styles from '../styles/header.module.scss';
 
 const Header = () => (
 	<header>
-		{/* <h1>katie langerman</h1> */}
 		<span className={styles.navLinksWrap}>
 			<a href="mailto:langermank@gmail.com" alt="email katie">
 				langermank@gmail.com
