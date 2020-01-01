@@ -13,7 +13,7 @@
 // for-placement-only to use for building page frameworks
 // copy into your source less file and use the class on whatever element you're laying out
 @mixin fpo {
-  background-color: $basered;
+  background-color: $redpop;
   text-align: center;
   @include px-rem(padding, 15);
   @include px-rem-margin(15, 0, 15, 0);

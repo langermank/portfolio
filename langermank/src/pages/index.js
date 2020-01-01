@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
         <Text/>
       </section>
       <section className={styles.postsWrap}>
-        <h1>Tidbits</h1>
+        <h2 className="header1">Tidbits</h2>
         <div className={styles.posts}>
           <h2>Here</h2>
           <ul className={styles.internal}>

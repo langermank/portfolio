@@ -2,7 +2,7 @@
 @import '../styles/mixins';
 
 .btn {
-  background-color: $basered;
+  background-color: $redpop;
   border: 1px solid transparent;
   border-radius: 0px;
   color: $white;
@@ -13,7 +13,7 @@
   padding: 15px 20px;
 
   &:hover {
-    background-color: darken($basered, 15%);
+    background-color: darken($redpop, 15%);
   }
 
   &:focus {
@@ -35,7 +35,7 @@
   &:disabled {
     background-color: gainsboro;
     border-color: transparent;
-    color: $almostblack;
+    color: $blueblack;
     cursor: default;
   }
 

@@ -2,70 +2,68 @@
 @import 'mixins';
 @import 'reset';
 
+// base font styles
+
 body {
     font-family: $base-font;
-    font-variation-settings: $body-regular;
+    font-variation-settings: $base-font-weight-normal;
     font-feature-settings: "salt";
     font-size: 100%;
+    background-color: $hintofpink;
+    color: $body;
 }
 
 h1,
 .header1 {
     font-family: $heading-font;
-    font-variation-settings: $cabin-bold;
-    color: black;
+    font-variation-settings: $heading-font-weight-bold;
+    color: $navy;
     line-height: $smallerLineHeight;
     margin-top: 0;
     margin-bottom: 0;
-    @include fontSize(40px);
     letter-spacing: .04em;
+    @include fontSize(48px);
 }
 
 h2,
 .header2 {
-    font-family: $base-font;
-    color: $black;
+    font-family: $heading-font;
+    color: $navy;
     line-height: $baseLineHeight;
     margin-top: 0;
     margin-bottom: 0;
-    @include fontSize(24px);
-    // letter-spacing: .04em;
+    letter-spacing: .04em;
+    @include fontSize(36px);
 }
 
 h3,
 .header3 {
-    color: $black;
-    line-height: $smallerLineHeight;
+    font-family: $base-font;
+    color: $blueblack;
+    line-height: $baseLineHeight;
     margin-top: 0;
     margin-bottom: 0;
-    @include fontSize(22px);
+    @include fontSize(30px);
 }
 
 h4,
 .header4 {
-    color: $black;
-    line-height: $smallerLineHeight;
+    font-family: $base-font;
+    color: $blueblack;
+    line-height: $baseLineHeight;
     margin-top: 0;
     margin-bottom: 0;
-    @include fontSize(20px);
+    @include fontSize(24px);
 }
 
 h5,
 .header5 {
-    color: $black;
+    font-family: $base-font;
+    color: $blueblack;
     line-height: $baseLineHeight;
     margin-top: 0;
     margin-bottom: 0;
-    @include fontSize(16px);
-}
-
-h6,
-.header6 {
-    color: black;
-    line-height: $baseLineHeight;
-    margin-top: 0;
-    margin-bottom: 0;
-    @include px-rem(font-size, 16)
+    @include fontSize(18px);
 }
 
 p {
@@ -80,7 +78,7 @@ p {
     }
 
     &.bodyLight {
-        color: black;
+        color: $bodylight;
     }
 }
 
@@ -97,10 +95,6 @@ a {
     }
 }
 
-.bold,
-strong {
-    font-weight: $base-font-weight-bold;
-}
 
 // sets ideal reading line length
 .bodyOfText {

@@ -4,56 +4,52 @@ $smallerLineHeight: 1.2;
 $transition: all 0.2s ease-in-out;
 $border-radius: 2px;
 
-// media queries
-// $min-xlg-desktop: ~"only screen and (min-width: 1440px)";
-// $min-lg-desktop: ~"only screen and (min-width: 1280px)";
-// $min-desktop: ~"only screen and (min-width: 1024px)";
-// $min-tablet: ~"only screen and (min-width: 768px)";
-// $max-mobile: ~"only screen and (max-width: 767px)";
-
 // breakpoints
 $xlg-desktop: 1440px;
 $lg-desktop: 1280px;
 $desktop: 1024px;
 $tablet: 768px;
 $mobile: 320px;
-
 $small-screen: $mobile;
 $large-screen: $xlg-desktop;
 
 // fonts
 $cabin: "Cabin Variable", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
 $source-sans: "Source Sans Variable", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;
-$body-regular: "wght" 400;
-$body-bold: "wght" 700;
+$source-sans-italic: "Source Sans Variable Italic", system-ui, -apple-system, BlinkMacSystemFont, 'seravek', 'segoe ui', 'roboto', sans-serif;$generic-font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+// variable font settings
 $cabin-regular: "wght" 94, "wdth" 100;
 $cabin-medium: "wght" 109, "wdth" 100;
 $cabin-semibold: "wght" 116, "wdth" 100;
 $cabin-bold: "wght" 128, "wdth" 100;
+$source-sans-bold: "wght" 700;
+$source-sans-normal: "wght" 400;
+// alias
 $heading-font: $cabin;
-$heading-font-weight-bold: 700;
+$heading-font-weight-bold: $cabin-bold;
 $base-font: $source-sans;
-$base-font-weight-bold: 700;
-$base-font-weight-normal: 400;
-$generic-font-family: Menlo, Monaco, Consolas, Courier New, monospace;
-
+$base-font-weight-bold: $source-sans-bold;
+$base-font-weight-normal: $source-sans-normal;
 
 
 // base colors
-$basered: #ff6347;
+$hintofpink: #FDF7F7;
+$redpop: #ff6347;
 // text
 $black: #000000;
-$body: darken($black, 17%);
-$almostblack: #453d3b;
+$blueblack: #08191C;
+$navy: #203e75;
+$body: #08191C;
 // gray
 $white: #ffffff;
+$bodylight: #606b6c;
 
 // variations
 $lighten-percentage: 10%;
 $darken-percentage: 10%;
 
 // specifics
-$link: #4079e6;
+$link: #3769c6;
 $link-hover: darken($link, $darken-percentage);
 
 // fun things
