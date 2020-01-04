@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styles from '../styles/layout.module.scss';
 import Header from './header';
+import Footer from './footer';
 import "../../static/fonts/fonts.css"
 
 const Layout = ({ children }) => {
@@ -21,11 +22,7 @@ const Layout = ({ children }) => {
     <div className={styles.pageWrap}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <footer>
-        <Link to="page-2" alt="my scrap paper">
-          Scrap paper
-        </Link>
-      </footer>
+      <Footer />
     </div>
   );
 };

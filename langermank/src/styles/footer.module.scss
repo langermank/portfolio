@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+footer {
+    grid-area: footer;
+    padding: 2rem 0 1.5rem 0;
+    @include fontSize(16px);
+
+    .navLinksWrap {
+        display: flex;
+        flex-direction: row;
+
+        li:not(:first-of-type) {
+            padding: 0 1rem;
+        }
+    }
+}
