@@ -44,7 +44,8 @@ $navy: #203e75;
 $body: #08191C;
 // gray
 $white: #ffffff;
-$bodylight: #606b6c;
+$bodylight: #677374;
+$bodylight-dark-background: #a3adae;
 
 // variations
 $lighten-percentage: 10%;
@@ -53,6 +54,7 @@ $darken-percentage: 10%;
 // specifics
 $link: #3769c6;
 $link-hover: darken($link, $darken-percentage);
+$link-dark-background: #8bb3ff;
 
 // fun things
 $cssProp: #0073f0;
