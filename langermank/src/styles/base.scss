@@ -21,8 +21,15 @@ h1,
     line-height: $smallerLineHeight;
     margin-top: 0;
     margin-bottom: 0;
-    letter-spacing: .04em;
-    @include fontSize(48px);
+    @include fontSize(46px);
+}
+
+@media only screen and (min-width: $tablet) {
+    h1,
+    .header1 {
+        letter-spacing: .04em;
+        @include fontSize(48px);
+    }
 }
 
 h2,

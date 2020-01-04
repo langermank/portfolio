@@ -2,13 +2,24 @@
 @import "mixins";
 
 .pageWrap {
+    margin: 1.5rem;
     display: grid;
     grid-gap: 2rem 0;
     grid-template:
-        ". header ." auto
-        ". main ." auto
-        ". footer ." auto
-        / .125fr 3fr .125fr;
+        "header" auto
+        "main" auto
+        "footer" auto
+        / 1fr;
+}
+
+@media only screen and (min-width: $desktop) {
+	.pageWrap {
+		grid-template:
+			". header ." auto
+		    ". main ." auto
+		    ". footer ." auto
+		    / .25fr 3fr .25fr;
+	}
 }
 
 @media only screen and (min-width: $lg-desktop) {

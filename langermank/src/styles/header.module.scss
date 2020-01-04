@@ -5,28 +5,49 @@ header {
 	display: flex;
 	flex-wrap: wrap;
 	grid-area: header;
-	align-items: center;
-	margin: 16px 32px;
+	align-items: flex-start;
+	justify-content: center;
+	margin-top: 1rem;
 
-	h1 {
-		margin-bottom: 0;
+	.kLink {
+		margin-right: 1rem;
 	}
 
-	.navLinksWrap {
+	svg {
+		display: flex;
+		fill: $link;
+		transition: $transition;
+
+		&:hover {
+			fill: $redpop;
+		}
+	}
+
+	.navLinks {
 		display: flex;
 		flex-direction: column;
-		font-size: 16px;
 
-		.navLinks {
-			a {
-				margin: 16px 16px 16px 0;
+		ul {
+			display: flex;
+			flex-direction: row;
+
+			li {
+				margin: .5rem .75rem;
+
+				&:first-of-type {
+					margin-left: 0;
+				}
+
+				&:last-of-type {
+					margin-right: 0;
+				}
 			}
 		}
 	}
 }
 
 @media only screen and (min-width: $tablet) {
-	.navLinksWrap {
-		margin-left: auto;
+	header {
+		justify-content: end;
 	}
 }
