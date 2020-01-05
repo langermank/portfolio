@@ -9,8 +9,7 @@
 @font-face{
     font-family: 'Cabin Italic Variable';
     src: url('Cabin-Italic_V.ttf') format('truetype');
-    font-weight: 1 999;
-    font-weight: normal;
+    font-weight: 95 128;
     font-style: italic;
     font-display: swap;
 }

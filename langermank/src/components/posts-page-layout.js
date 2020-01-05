@@ -9,13 +9,14 @@ export default function PageTemplate({ data: { mdx } }) {
     <Layout>
       <Link to="/" className={styles.backLink}>Back home</Link>
       <article className={styles.postWrap}>
-	  	<div className={styles.postHeader}>
-		  <h1>{mdx.frontmatter.title}</h1>
+	  	  <div className={styles.postHeader}>
+		      <h1>{mdx.frontmatter.title}</h1>
           <time>{mdx.frontmatter.date}</time>
-		</div>
+		    </div>
         <div className={styles.postContent}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </div>
+      <Link to="/" className={styles.backLink}>Back home</Link>
       </article>
     </Layout>
   )

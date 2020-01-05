@@ -46,6 +46,7 @@ h2,
 h3,
 .header3 {
     font-family: $cabin-italic;
+    font-variation-settings: $cabin-regular-italic;
     font-style: italic;
     color: $blueblack;
     line-height: $baseLineHeight;
@@ -117,4 +118,12 @@ a {
 
 .textCenter {
     text-align: center;
+}
+
+strong {
+    font-variation-settings: $source-sans-bold;
+}
+
+.gatsby-resp-image-wrapper {
+    filter: drop-shadow(0 0 0.75rem $deeperpink);
 }
