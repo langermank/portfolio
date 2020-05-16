@@ -127,3 +127,12 @@ strong {
 .gatsby-resp-image-wrapper {
     filter: drop-shadow(0 0 0.75rem $deeperpink);
 }
+
+.codeBlock {
+    max-width: 40rem;
+    background: $white;
+    border: solid 1px $navy;
+    overflow-x: auto;
+    padding: 1rem;
+    margin: 1rem 0;
+}

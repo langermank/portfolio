@@ -50,6 +50,19 @@ const IndexPage = ({ data }) => {
             <ul className={styles.external}>
             <li>
               <a
+                href="https://www.youtube.com/watch?v=AtYyOGmOZkc&feature=youtu.be"
+                alt="adobe blog"
+                target="_blank"
+                rel="noopener noreferrer">
+                  justify-yourself: space-between
+                  <span className={styles.customDate}>
+                    Boston CSS Meetup<span aria-hidden="true" className={styles.bullet}> · </span>
+                    <time>October 4, 2019</time>
+                  </span>
+                </a>
+            </li>
+            <li>
+              <a
                 href="https://xd.adobe.com/ideas/perspectives/interviews/critical-role-ux-generalist-hybrid-designer/"
                 alt="adobe blog"
                 target="_blank"
@@ -86,7 +99,7 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query IndexPage {
-    allMdx(filter: {fileAbsolutePath: {regex: "/posts/"}}) {
+    allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/posts/"}}) {
       edges {
         node {
           id

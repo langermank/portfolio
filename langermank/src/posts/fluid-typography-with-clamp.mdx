@@ -1,0 +1,110 @@
+---
+title: Fluid Typography with clamp()
+date: "2020-05-16"
+path: /fluid-typography-clamp/
+---
+
+I've been waiting for `clamp()` browser support for awhile. Finally we're at a point where it feels safe to implement with a fallback for production sites. I spent a day converting an existing fluid type scale to utilize `clamp()` and documented the process along the way! My goal with this conversion was to keep the compiled sizing as close to the original LESS mixin as possible. A few benefits I already see for using `clamp()`:
+- The syntax is _immensely_ easier to read and write
+- The `clamp()` definition could live in a CSS custom propery, allowing for themes to utilize one type scale file without losing control over individual heading sizes
+- You no longer need to rely on a complicated LESS mixin
+
+
+Skip ahead to my <a href="https://codepen.io/langermank/pen/ZEbqyWJ?editors=1100" alt="clamp and less mixin comparision for fluid typography" target="_blank" rel="noopener noreferrer">codepen</a> comparing the LESS mixin with clamp().
+
+## out with the old
+
+Below is the original LESS mixin I've been using for years. I've seen this several times on codepen and in various articles, so I'm not sure who to credit. I use rems and assume a base font size of 16px.
+
+<div className="codeBlock">
+
+```css
+    .fluid-typography-rem(@min-screen: 320px, @max-screen: 1600px, @base-font: 16px, @min-font, @max-font, @fallbackFontSize) {
+        // min font size
+        font-size: @min-font;
+
+        @media screen and (min-width: unit((@min-screen / @base-font), ~'rem')) {
+            font-size: ~'@{fallbackFontSize}';
+            font-size: calc(
+                @min-font ~' + ' unit(@max-font - @min-font) ~' * ((100vw - '
+                    unit((@min-screen / @base-font), ~'rem') ~') /' unit(
+                        (@max-screen / @base-font) - (@min-screen / @base-font)
+                    ) ~')'
+            );
+        }
+
+        @media screen and (min-width: unit((@max-screen / @base-font), ~'rem')) {
+            // max font size
+            font-size: @max-font;
+        }
+    }
+
+    /* the output looks like this for h1 */
+    /* minimum size of 25.6px */
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    /* starting at 320px screen width */
+    @media screen and (min-width: 20rem) {
+        h1 {
+            font-size: 1.75rem; // fallback of 28px
+            font-size: calc(1.6rem  +  0.4  * ((100vw -  20rem) / 70));
+        }
+    }
+
+    /* anything beyond 1440px */
+    @media screen and (min-width: 90rem) {
+        h1 {
+            font-size: 2rem; // max of 32px
+        }
+    }
+```
+</div>
+
+I've always felt that this logic is really hard to follow. Essentially we are setting a min font size, a max font size, and asking the browser to scale up and down fluidly between the two **based on the viewport width in the calc function**... which is also calculated based on the screen size range and base font size we have specified. I think `clamp()` is doing the same thing, though I haven't been able to get an exact match between the mixin and clamp. I'm okay with that.
+
+## converting to clamp()
+
+Since I already have a fluid type scale, I can reuse those values within my clamp definitions. I still need to support ie11 and other browsers that have yet to support `clamp()` so I'll be using `@supports` with a fallback. I found <a href="https://medium.com/@Yuschick/fluid-typography-with-css-clamp-is-my-new-favorite-thing-573d0b8d7bfc" alt="fluid typography with css clamp" target="_blank" rel="noopener noreferrer">this article</a> really helpful in understanding `clamp()` and using it with `@supports`, but I'm going to elaborate on each part of clamp for my own sake (it took me a bit to fully grasp).
+
+### clamp() breakdown
+
+Read the spec <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp" alt="css clamp mdn" target="_blank" rel="noopener noreferrer">here</a>
+
+`clamp(min, val, max)`
+
+`min` the smallest unit you ever want
+
+`max` the biggest unit you ever want
+
+`val` the ideal unit
+
+The middle value is referred to as a `preferred value`. I found this part a little confusing to figure out. If the computed `val` is less than `min` : `min` value will be used. If the computed `val` is greater than `max` : `max` value will be used.
+
+By setting the `preferred` value in `vw` units, we can leverage the "fluid" aspect of relative units. And by using `clamp()` we can enforce a min and max font-size to regain control over the fluidity whenever necessary (eg: not allowing the font-size to go below or above a certain point.) Having a good understanding of how `vw` works helps here! As a little overview:
+
+- `vw` = 1% of the viewport's width
+- `3vw` = 30% of the viewport's width
+- `vw` and `vh` are relative units, not absolute, so they scale with the width or height of the viewport (perfect for fluid typography)
+
+#### example
+Say this is our clamp definition: `font-size: clamp(1.6rem, 4vw, 2rem);`
+
+If the viewport window is 768px, `font-size: 4vw` computes to 30.7167px
+
+768 * 0.4 = 307.2 or 30.72px
+
+If that calculated value of 30.72px was **higher** than the `max` value we defined in the clamp, the font-size would instead take the `max` value.
+
+In plain english, clamp says:
+"Here's my min font-size, here's my max font-size, and here's my **PREFERRED font-size**. Please use my preferred font-size whenever possible, but don't let it exceed my max font-size or go below my min font-size."
+
+## the comparison
+
+From what I can tell, there's a slight difference between the fluid typography mixin logic and `clamp()`. You can see the difference in the codepen below where I'm printing out each computed font size side by side. Now that I understand how to utilize the `val` part of `clamp()` it's quite easy to control the type scale, but trying to match it with logic in a mixin I barely understand was a struggle. Since I have further improvements I'd like to do to this particular type scale, I'm happy with the results being close enough for now!
+
+<CodePen codePenId="ZEbqyWJ" />
+
+
+
