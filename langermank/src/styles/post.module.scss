@@ -65,6 +65,6 @@
 @media only screen and (min-width: $desktop) {
 	.postWrap {
     display: grid;
-    grid-template-columns: [main-start] 4fr [main-end] 1.5fr;
+    grid-template-columns: [main-start] minmax(600px, .5fr) [main-end];
   }
 }
