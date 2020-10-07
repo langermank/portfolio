@@ -3,6 +3,7 @@ module.exports = {
     title: 'Katie Langerman | Designer who codes',
     description: 'Katie Langerman is a hybrid UI/UX designer/developer based in Boston, MA',
     author: '@langermank',
+    siteUrl: 'https://langermank.com',
   },
   plugins: [
     {

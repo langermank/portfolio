@@ -1,91 +1,41 @@
 /* eslint-disable react/jsx-filename-extension */
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react"
+import { Helmet } from "react-helmet"
+import useSiteMetadata from "../hooks/use-site-metadata"
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import shareImg from "../images/langerman-share-img.jpg"
 
-function SEO({
-  description, lang, meta, title,
-}) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `,
-  );
+const SEO = ({ pathname }) => {
+  const { siteUrl, title, twitter } = useSiteMetadata()
 
-  const metaDescription = description || site.siteMetadata.description;
+
+  // Note: `location.href` isn't available on server-side so we must get it from `pathname`:
+  // https://css-tricks.com/how-to-the-get-current-page-url-in-gatsby/#article-header-id-4
+  const href = `${siteUrl}${pathname}`
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata.author,
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  );
+    <Helmet defer={false} defaultTitle={title} titleTemplate={`%s | ${title}`}>
+      {/* <html lang={locale} /> */}
+      <link rel="canonical" href={href} />
+      <meta name="docsearch:version" content="2.0" />
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
+      />
+
+      <meta property="og:url" content={href} />
+      <meta property="og:type" content="website" />
+      {/* <meta property="og:locale" content={locale} /> */}
+      <meta property="og:site_name" content={title} />
+      <meta property="og:image" content={`${siteUrl}${shareImg}`} />
+      <meta property="og:image:alt" content="Katie Langerman's personal site" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="627" />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content={twitter} />
+    </Helmet>
+  )
 }
 
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-};
-
-export default SEO;
+export default SEO

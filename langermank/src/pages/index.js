@@ -48,10 +48,21 @@ const IndexPage = ({ data }) => {
               <h3>&there</h3>
             </span>
             <ul className={styles.external}>
+              <li>
+                <a
+                  href="https://youtu.be/51QcMcTlgcY"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Future of UX &amp; Design
+                  <span className={styles.customDate}>
+                    Future of Industry podcast<span aria-hidden="true" className={styles.bullet}> · </span>
+                    <time>August 11, 2020</time>
+                  </span>
+                </a>
+              </li>
             <li>
               <a
                 href="https://www.youtube.com/watch?v=AtYyOGmOZkc&feature=youtu.be"
-                alt="adobe blog"
                 target="_blank"
                 rel="noopener noreferrer">
                   justify-yourself: space-between
@@ -64,7 +75,6 @@ const IndexPage = ({ data }) => {
             <li>
               <a
                 href="https://xd.adobe.com/ideas/perspectives/interviews/critical-role-ux-generalist-hybrid-designer/"
-                alt="adobe blog"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -78,7 +88,6 @@ const IndexPage = ({ data }) => {
             <li>
               <a
                 href="https://medium.com/ltuxbos/wcw-february-with-katie-langerman-2df2c282e9ea"
-                alt="ladies that ux boston wcw"
                 target="_blank"
                 rel="noopener noreferrer"
               >
