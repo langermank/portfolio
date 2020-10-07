@@ -1,5 +1,3 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'clsx';
