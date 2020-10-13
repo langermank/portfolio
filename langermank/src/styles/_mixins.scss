@@ -15,8 +15,7 @@
 @mixin fpo {
   background-color: $redpop;
   text-align: center;
-  @include px-rem(padding, 15);
-  @include px-rem-margin(15, 0, 15, 0);
+  padding: 1rem;
 }
 
 // a11y outline mixin
@@ -37,14 +36,14 @@
 @mixin px-rem($property, $sizeValue) {
   $pxValue: $sizeValue;
   $remValue: ($sizeValue / $base);
-  #{property}: "${remValue}rem";
+  #{property}: '${remValue}rem';
 }
 
 // based on the font-size of the parent element
 @mixin px-em($property, $sizeValue) {
   $pxValue: $sizeValue;
   $emValue: ($sizeValue / $base);
-  #{property}: "${emValue}em";
+  #{property}: '${emValue}em';
 }
 
 // sets margins in rems
@@ -55,7 +54,7 @@
   $mrv: ($mr / $base);
   $mbv: ($mb / $base);
   $mlv: ($ml / $base);
-  #{margin}: #{"${mtv}rem" "${mrv}rem" "${mbv}rem" "${mlv}rem"};
+  #{margin}: #{'${mtv}rem' '${mrv}rem' '${mbv}rem' '${mlv}rem'};
 }
 
 // sets margins in ems
@@ -66,7 +65,7 @@
   $mrv: ($mr / $base);
   $mbv: ($mb / $base);
   $mlv: ($ml / $base);
-  #{margin}: #{"${mtv}em" "${mrv}em" "${mbv}em" "${mlv}em"};
+  #{margin}: #{'${mtv}em' '${mrv}em' '${mbv}em' '${mlv}em'};
 }
 
 // sets padding in ems
@@ -77,7 +76,7 @@
   $prv: ($pr / $base);
   $pbv: ($pb / $base);
   $plv: ($pl / $base);
-  #{padding}: #{"${ptv}em" "${prv}em" "${pbv}em" "${plv}em"};
+  #{padding}: #{'${ptv}em' '${prv}em' '${pbv}em' '${plv}em'};
 }
 
 // sets padding in rems
@@ -88,5 +87,5 @@
   $prv: ($pr / $base);
   $pbv: ($pb / $base);
   $plv: ($pl / $base);
-  #{padding}: #{"${ptv}rem" "${prv}rem" "${pbv}rem" "${plv}rem"};
+  #{padding}: #{'${ptv}rem' '${prv}rem' '${pbv}rem' '${plv}rem'};
 }

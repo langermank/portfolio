@@ -5,134 +5,135 @@
 // base font styles
 
 body {
-    font-family: $base-font;
-    font-variation-settings: $base-font-weight-normal;
-    font-feature-settings: "salt";
-    font-size: 100%;
-    background-color: $hintofpink;
-    color: $body;
+  font-family: $base-font;
+  font-variation-settings: $base-font-weight-normal;
+  font-feature-settings: 'salt';
+  font-size: 100%;
+  background-color: $hintofpink;
+  color: $body;
 }
 
 h1,
 .header1 {
-    font-family: $heading-font;
-    font-variation-settings: $heading-font-weight-bold;
-    color: $navy;
-    line-height: $smallerLineHeight;
-    margin-top: 0;
-    margin-bottom: 0;
-    @include fontSize(46px);
+  font-family: $heading-font;
+  font-variation-settings: $heading-font-weight-bold;
+  color: $navy;
+  line-height: $smallerLineHeight;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include fontSize(46px);
 }
 
 @media only screen and (min-width: $tablet) {
-    h1,
-    .header1 {
-        letter-spacing: .04em;
-        @include fontSize(48px);
-    }
+  h1,
+  .header1 {
+    letter-spacing: 0.04em;
+    @include fontSize(48px);
+  }
 }
 
 h2,
 .header2 {
-    font-family: $heading-font;
-    color: $navy;
-    line-height: $baseLineHeight;
-    margin-top: 0;
-    margin-bottom: 0;
-    letter-spacing: .04em;
-    @include fontSize(36px);
+  font-family: $heading-font;
+  color: $navy;
+  line-height: $baseLineHeight;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.04em;
+  @include fontSize(36px);
 }
 
 h3,
 .header3 {
-    font-family: $cabin-italic;
-    font-variation-settings: $cabin-regular-italic;
-    font-style: italic;
-    color: $blueblack;
-    line-height: $baseLineHeight;
-    margin-top: 0;
-    margin-bottom: 0;
-    @include fontSize(30px);
+  font-family: $cabin-italic;
+  font-variation-settings: $cabin-regular-italic;
+  font-style: italic;
+  color: $blueblack;
+  line-height: $baseLineHeight;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include fontSize(30px);
 }
 
 h4,
 .header4 {
-    font-family: $base-font;
-    color: $blueblack;
-    line-height: $baseLineHeight;
-    margin-top: 0;
-    margin-bottom: 0;
-    @include fontSize(24px);
+  font-family: $base-font;
+  color: $blueblack;
+  line-height: $baseLineHeight;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-variation-settings: 'wght' 400;
+  font-style: normal;
+  @include fontSize(24px);
 }
 
 h5,
 .header5 {
-    font-family: $base-font;
-    color: $blueblack;
-    line-height: $baseLineHeight;
-    margin-top: 0;
-    margin-bottom: 0;
-    @include fontSize(18px);
+  font-family: $base-font;
+  color: $blueblack;
+  line-height: $baseLineHeight;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include fontSize(18px);
 }
 
 p {
-    color: $body;
-    line-height: $baseLineHeight;
-    margin-bottom: 0;
-    margin-top: 0;
-    @include fontSize(18px);
+  color: $body;
+  line-height: $baseLineHeight;
+  margin-bottom: 0;
+  margin-top: 0;
+  @include fontSize(18px);
 
-    &.bodySM {
-        @include fontSize(14px);
-    }
+  &.bodySM {
+    @include fontSize(14px);
+  }
 
-    &.bodyLight {
-        color: $bodylight;
-    }
+  &.bodyLight {
+    color: $bodylight;
+  }
 }
 
 a {
-    color: $link;
-    text-decoration: none;
-    // background-image: linear-gradient($redpop, $redpop);
-    // background-position: 0% 100%;
-    // background-repeat: no-repeat;
-    // background-size: 0% 4px;
-    // transition: background-size cubic-bezier(0,.5,0,1) 0.3s;
+  color: $link;
+  text-decoration: none;
+  // background-image: linear-gradient($redpop, $redpop);
+  // background-position: 0% 100%;
+  // background-repeat: no-repeat;
+  // background-size: 0% 4px;
+  // transition: background-size cubic-bezier(0,.5,0,1) 0.3s;
 
-    &:hover,
-    &:focus,
-    &:active {
-        color: $link-hover;
-        text-decoration: solid underline $redpop .125em;
-        //background-size: 100% 4px;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-hover;
+    text-decoration: solid underline $redpop 0.125em;
+    //background-size: 100% 4px;
+  }
 }
-
 
 // sets ideal reading line length
 .bodyOfText {
-    @include px-em(width, 640);
-    margin: 0 auto;
+  @include px-em(width, 640);
+  margin: 0 auto;
 }
 
 .textCenter {
-    text-align: center;
+  text-align: center;
 }
 
 strong {
-    font-variation-settings: $source-sans-bold;
+  font-variation-settings: $source-sans-bold;
 }
 
 .gatsby-resp-image-wrapper {
-    filter: drop-shadow(0 0 0.75rem $deeperpink);
+  filter: drop-shadow(0 0 0.75rem $deeperpink);
 }
 
 .codeBlock {
-    max-width: 40rem;
-    background: $white;
-    border: solid 1px $navy;
-    overflow-x: auto;
-    padding: 1rem;
-    margin: 1rem 0;
+  max-width: 40rem;
+  background: $white;
+  border: solid 1px $navy;
+  overflow-x: auto;
+  padding: 1rem;
+  margin: 1rem 0;
 }

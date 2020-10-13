@@ -100,6 +100,19 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      <section className={styles.projectsWrap}>
+        <h2 className="">Side projects</h2>
+        <h3 className="header4">Reality Stock Watch</h3>
+        <div className={styles.projectLinks}>
+          <a href="https://github.com/Stock-Watch-App/Stockwatch" target="_blank"
+            rel="noopener noreferrer">github</a>
+          <a href="https://realitystockwatch.com/" target="_blank"
+            rel="noopener noreferrer">site</a>
+        </div>
+          <div className={styles.fpo}>img</div>
+          <p>The Stock Watch is a virtual stock market game for Big Brother created by Taran Armstrong. Partnering with a full stack engineer, I designed and implemented the front-end of the app built with Laravel and Vue. Over 7,000 users buy/sell mock stocks and rank on the leaderboard each week during Big Brother seasons.</p>
+        
+      </section>
     </Layout>
   )
 };
