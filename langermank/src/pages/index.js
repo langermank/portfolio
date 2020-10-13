@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import classnames from 'clsx';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import styles from '../styles/home.module.scss';
 import Layout from '../components/layout';
 import Text from '../text/aboutme.mdx';
+import Img from 'gatsby-image';
 
 const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMdx
@@ -109,8 +110,10 @@ const IndexPage = ({ data }) => {
           <a href="https://realitystockwatch.com/" target="_blank"
             rel="noopener noreferrer">site</a>
         </div>
-          <div className={styles.fpo}>img</div>
-          <p>The Stock Watch is a virtual stock market game for Big Brother created by Taran Armstrong. Partnering with a full stack engineer, I designed and implemented the front-end of the app built with Laravel and Vue. Over 7,000 users buy/sell mock stocks and rank on the leaderboard each week during Big Brother seasons.</p>
+        <a href="https://realitystockwatch.com/" target="_blank" rel="noopener noreferrer" className={styles.imageOne}>
+          <Img fluid={data.imageOne.childImageSharp.fluid} />
+        </a>
+        <p>The Stock Watch is a virtual stock market game for Big Brother created by <a href="https://twitter.com/ArmstrongTaran" target="_blank" rel="noopener noreferrer">Taran Armstrong</a>. Partnering with a full stack engineer, I designed and implemented the front-end of the app built with Laravel and Vue. Over 7,000 users buy/sell mock stocks and rank on the leaderboard each week during Big Brother seasons.</p>
         
       </section>
     </Layout>
@@ -118,7 +121,7 @@ const IndexPage = ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query IndexPage {
+  query {
     allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/posts/"}}) {
       edges {
         node {
@@ -131,6 +134,20 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+        }
+      }
+    }
+    imageOne: file(relativePath: { eq: "stockwatch.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    imageTwo: file(relativePath: { eq: "stockwatch.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
