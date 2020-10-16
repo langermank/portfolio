@@ -101,20 +101,35 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      
       <section className={styles.projectsWrap}>
         <h2 className="">Side projects</h2>
-        <h3 className="header4">Reality Stock Watch</h3>
-        <div className={styles.projectLinks}>
-          <a href="https://github.com/Stock-Watch-App/Stockwatch" target="_blank"
-            rel="noopener noreferrer">github</a>
-          <a href="https://realitystockwatch.com/" target="_blank"
-            rel="noopener noreferrer">site</a>
+        <div className={styles.projectSubGrid}>
+          <h3 className="header4">Reality Stock Watch</h3>
+          <div className={styles.projectLinks}>
+            <a href="https://github.com/Stock-Watch-App/Stockwatch" target="_blank"
+              rel="noopener noreferrer">github</a>
+            <a href="https://realitystockwatch.com/" target="_blank"
+              rel="noopener noreferrer">site</a>
+          </div>
+          <a href="https://realitystockwatch.com/" target="_blank" rel="noopener noreferrer" className={styles.imageOne}>
+            <Img fluid={data.imageOne.childImageSharp.fluid} alt="Stock Watch landing page" />
+          </a>
+          <p>The Stock Watch is a virtual stock market game for Big Brother created by <a href="https://twitter.com/ArmstrongTaran" target="_blank" rel="noopener noreferrer">Taran Armstrong</a>. Partnering with a full stack engineer, I designed and implemented the front-end of the app built with Laravel and Vue. Over 7,000 users buy/sell mock stocks and rank on the leaderboard each week during Big Brother seasons.</p>
         </div>
-        <a href="https://realitystockwatch.com/" target="_blank" rel="noopener noreferrer" className={styles.imageOne}>
-          <Img fluid={data.imageOne.childImageSharp.fluid} />
-        </a>
-        <p>The Stock Watch is a virtual stock market game for Big Brother created by <a href="https://twitter.com/ArmstrongTaran" target="_blank" rel="noopener noreferrer">Taran Armstrong</a>. Partnering with a full stack engineer, I designed and implemented the front-end of the app built with Laravel and Vue. Over 7,000 users buy/sell mock stocks and rank on the leaderboard each week during Big Brother seasons.</p>
-        
+        <div className={styles.projectSubGrid}>
+          <h3 className="header4">Ladies that UX Boston</h3>
+          <div className={styles.projectLinks}>
+            <a href="https://github.com/ladies-that-ux-boston/ladiesthatuxboston" target="_blank"
+              rel="noopener noreferrer">github</a>
+            <a href="https://ladiesthatuxboston.com/" target="_blank"
+              rel="noopener noreferrer">site</a>
+          </div>
+          <a href="https://ladiesthatuxboston.com/" target="_blank" rel="noopener noreferrer" className={styles.imageOne}>
+            <Img fluid={data.imageTwo.childImageSharp.fluid} alt="Ladies that UX Boston landing page" />
+          </a>
+          <p>As one of the co-organizers of the Boston chapter of Ladies that UX, I designed and implemented a simple Gatsby site for our meetup group. Our landing page includes a Medium feed featuring our monthly #WCW posts.</p>
+        </div>
       </section>
     </Layout>
   )
@@ -144,7 +159,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    imageTwo: file(relativePath: { eq: "stockwatch.jpg" }) {
+    imageTwo: file(relativePath: { eq: "ltux.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid
