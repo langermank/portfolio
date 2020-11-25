@@ -1,18 +1,22 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 footer {
-    grid-area: footer;
-    padding-top: 3rem;
-    @include fontSize(16px);
+  grid-area: footer;
+  padding-top: 3rem;
+  @include fontSize(16px);
 
-    .navLinksWrap {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+  .navLinksWrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-        li:not(:first-of-type) {
-            padding: 0 1rem;
-        }
+    li:not(:first-of-type) {
+      padding: 0 1rem;
     }
+  }
+
+  .navLinkBold {
+    font-variation-settings: $base-font-weight-bold;
+  }
 }

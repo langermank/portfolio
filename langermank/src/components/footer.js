@@ -6,12 +6,12 @@ const Footer = () => (
 	<footer>
 		<p>Katie Langerman</p>
 		<ul className={styles.navLinksWrap}>
-			<li className={styles.navLinks}>
+			<li>
 				<a href="mailto:langermank@gmail.com" alt="email katie">
 					langermank@gmail.com
 				</a>
 			</li>
-			<li className={styles.navLinks}>
+			<li>
 				<a
 					href="https://www.linkedin.com/in/langermank/"
 					alt="linkedin"
@@ -21,7 +21,7 @@ const Footer = () => (
 					linkedin
 				</a>
 			</li>
-			<li className={styles.navLinks}>
+			<li>
 				<a
 					href="https://twitter.com/KatieLangerman"
 					alt="twitter"
@@ -31,12 +31,12 @@ const Footer = () => (
 					twitter
 				</a>
 			</li>
-			<li className={styles.navLinks}>
+			<li>
 				<a href="https://github.com/langermank" alt="github" target="_blank" rel="noopener noreferrer">
 					github
 				</a>
 			</li>
-			<li className={styles.navLinks}>
+			<li>
 				<a
 					href="https://dribbble.com/katielangerman"
 					target="_blank"
@@ -44,6 +44,17 @@ const Footer = () => (
 					alt="dribbble"
 				>
 					dribbble
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://www.notion.so/Design-Engineer-Resources-419830805ba44911b2a96e36c09ecccc"
+					target="_blank"
+					rel="noopener noreferrer"
+					alt="design engineer resources"
+					className={styles.navLinkBold}
+				>
+					katie's design engineer resources
 				</a>
 			</li>
 		</ul>
