@@ -96,18 +96,12 @@ p {
 a {
   color: $link;
   text-decoration: underline;
-  // background-image: linear-gradient($redpop, $redpop);
-  // background-position: 0% 100%;
-  // background-repeat: no-repeat;
-  // background-size: 0% 4px;
-  // transition: background-size cubic-bezier(0,.5,0,1) 0.3s;
 
   &:hover,
   &:focus,
   &:active {
     color: $link-hover;
     text-decoration: solid underline $redpop 0.125em;
-    //background-size: 100% 4px;
   }
 }
 
