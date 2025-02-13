@@ -101,8 +101,8 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      
-      <section className={styles.projectsWrap}>
+
+      {/* <section className={styles.projectsWrap}>
         <h2 className="">Side projects</h2>
         <div className={styles.projectSubGrid}>
           <h3 className="header4">Reality Stock Watch</h3>
@@ -130,7 +130,7 @@ const IndexPage = ({ data }) => {
           </a>
           <p>As one of the co-organizers of the Boston chapter of Ladies that UX, I designed and implemented a simple Gatsby site for our meetup group. Our landing page includes a Medium feed featuring our monthly #WCW posts.</p>
         </div>
-      </section>
+      </section> */}
     </Layout>
   )
 };

@@ -46,17 +46,6 @@ const Footer = () => (
 					dribbble
 				</a>
 			</li>
-			<li>
-				<a
-					href="https://www.notion.so/Design-Engineer-Resources-419830805ba44911b2a96e36c09ecccc"
-					target="_blank"
-					rel="noopener noreferrer"
-					alt="design engineer resources"
-					className={styles.navLinkBold}
-				>
-					katie's design engineer resources
-				</a>
-			</li>
 		</ul>
 	</footer>
 );
