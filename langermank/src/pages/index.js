@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => {
             <ul className={styles.external}>
               <li>
                 <a
-                  href="https:www.youtube.com/watch?v='SjOieV8seec&t=7s"
+                  href="https://www.youtube.com/watch?v=SjOieV8seec"
                   target="_blank"
                   rel="noopener noreferrer">
                   Invisible infrastructure: How we shipped new color tokens
