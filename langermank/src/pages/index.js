@@ -49,17 +49,38 @@ const IndexPage = ({ data }) => {
             <ul className={styles.external}>
               <li>
                 <a
-                  href="https://youtu.be/51QcMcTlgcY"
+                  href="https:www.youtube.com/watch?v='SjOieV8seec&t=7s"
                   target="_blank"
                   rel="noopener noreferrer">
-                  Future of UX &amp; Design
+                  Invisible infrastructure: How we shipped new color tokens
+                without breaking GitHub
                   <span className={styles.customDate}>
-                    Future of Industry podcast<span aria-hidden="true" className={styles.bullet}> · </span>
-                    <time>August 11, 2020</time>
+                    GitHub X Figma Config Day 0
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=LN6dGGBfDYs&t=5s"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Async/Await: Close collaboration across non-overlapping time
+                zones
+                  <span className={styles.customDate}>
+                    GitHub LGTM Conf
                   </span>
                 </a>
               </li>
             <li>
+              <a
+                href="https://spaces.is/loversmagazine/interviews/katie-langerman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lover's Magazine interview
+              </a>
+              </li>
+              <li>
               <a
                 href="https://www.youtube.com/watch?v=AtYyOGmOZkc&feature=youtu.be"
                 target="_blank"
@@ -70,32 +91,6 @@ const IndexPage = ({ data }) => {
                     <time>October 4, 2019</time>
                   </span>
                 </a>
-            </li>
-            <li>
-              <a
-                href="https://xd.adobe.com/ideas/perspectives/interviews/critical-role-ux-generalist-hybrid-designer/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Hybrid Designer Career Path
-                <span className={styles.customDate}>
-                  Adobe<span aria-hidden="true" className={styles.bullet}> · </span>
-                  <time>January 10, 2019</time>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://medium.com/ltuxbos/wcw-february-with-katie-langerman-2df2c282e9ea"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LTUX Boston #WCW
-                <span className={styles.customDate}>
-                Ladies that UX Boston<span aria-hidden="true" className={styles.bullet}> · </span>
-                  <time>February 14, 2018</time>
-                </span>
-              </a>
             </li>
           </ul>
           </div>
